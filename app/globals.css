@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --canvas: #f7f6f2;
+  --ink: #1c1917;
+  --surface: #ffffff;
+  --hairline: #e7e5e4;
+  --body: #44403c;
+  --mute: #78716c;
+  --mute-2: #a8a29a;
+  --btn: #121212;
+  --sky-sub: #e0f0fc;
+  --chip-blue: #17a1fa;
+  --chip-grey: #e9eaec;
+  --available: #34c759;
+  --well-grey: #f8f8f8;
+  --faq-card: #e8e6e1;
+  --sand: #c4a574;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background: var(--canvas);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Consistent, quiet focus ring */
+:where(a, button, [role="button"], input, [tabindex]):focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* White ring for controls sitting on the hero / close photos */
+.on-photo:focus-visible {
+  outline-color: #ffffff;
+}
+
+/* Trusted-by marquee */
+@keyframes calora-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  animation: calora-marquee 34s linear infinite;
+}
+
+.marquee-viewport:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.001ms !important;
+    animation-duration: 0.001ms !important;
+  }
+
+  .marquee-track {
+    animation: none !important;
+    transform: none !important;
+  }
+}
