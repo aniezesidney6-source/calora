@@ -9,3 +9,25 @@ npm-debug.log*
 .env*.local
 .vercel
 *.tsbuildinfo
+
+.vercel
+
+# backup-safety-block
+node_modules/
+.env
+.env.*
+!.env.example
+*.keystore
+*.jks
+*.p8
+*.p12
+.venv/
+venv/
+__pycache__/
+.expo/
+.next/
+.vercel/
+desktop/release/
+android/app/build/
+ios/build/
+ios/Pods/
